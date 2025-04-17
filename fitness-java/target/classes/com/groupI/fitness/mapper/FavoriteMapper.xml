@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.groupI.fitness.mapper.FavoriteMapper">
+    <select id="selectFavoritePage" resultType="Favorite">
+        select * from favorite
+        <where>
+            <if test="keyword !=null and keyword !='' ">
+                or user_id = #{keyword}
+            </if>
+        </where>
+    </select>
+    <select id="selectFavorite" resultType="Favorite">
+        select * from favorite
+        <where>
+            <if test="keyword !=null and keyword !='' ">
+                or user_id = #{keyword}
+            </if>
+        </where>
+    </select>
+    <select id="selectFavoriteWithSameDietId" resultType="Favorite">
+        select * from favorite
+        <where>
+            <if test="keyword !=null and keyword !='' ">
+                or diet_id = #{keyword}
+            </if>
+        </where>
+    </select>
+</mapper>

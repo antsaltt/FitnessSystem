@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.groupI.fitness.mapper.LessonMapper">
+    <select id="selectLessonPage" resultType="Lesson">
+        select * from lesson
+        <where>
+            <if test="keyword !=null and keyword !='' ">
+<!--                or lesson_category like CONCAT('%',#{keyword},'%')-->
+                or lesson_name like CONCAT('%',#{keyword},'%')
+            </if>
+        </where>
+    </select>
+    <select id="selectLesson" resultType="Lesson">
+        select * from lesson
+        <where>
+            <if test="keyword !=null and keyword !='' ">
+                or lesson_name like CONCAT('%',#{keyword},'%')
+            </if>
+        </where>
+    </select>
+    <select id="selectLessonById" resultType="Lesson">
+        select * from lesson
+        <where>
+            <if test="keyword !=null and keyword !='' ">
+                or lesson_id = #{keyword}
+            </if>
+        </where>
+    </select>
+</mapper>
