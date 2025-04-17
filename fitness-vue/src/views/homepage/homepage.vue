@@ -56,7 +56,7 @@
         <router-view></router-view>
       </el-main>
       <el-footer>
-        © 2024 Gym Zone Fitness Center. All rights reserved.
+        © 2025 Gym Zone Fitness Center. All rights reserved.
       </el-footer>
     </el-container>
   </div>
